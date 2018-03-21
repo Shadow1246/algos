@@ -12,17 +12,24 @@ using namespace std;
 \param [in] data The data set that will be searched
 \returns location of key if found or -1 if not found
 */
-int linearSearch(auto data, auto key)
+vector<string> sort(auto data)
 {
  for(auto i = 0u; i < data.size(); i++)
    {    //Hint: when Data is changed to a vector of objects, we must call
         //the method to get a character from the object Data[i]
 
-     if (data[i]== key)//key found
-      return i;
-  }
-   return -1;//not found
-
+	int small =i;
+	 for(auto j= i + 1; j < data.size(); j++)
+	{
+     if (data[j]<data[small])
+	small=j;
+	}
+		swap(data[i],data[small]);
+	}
+   //   return i;
+ // }
+  // return -1;//not found
+	return data;
 
 }
 
@@ -30,7 +37,7 @@ int main()
 {
   vector<string> inputs;
   string search_key, input;
-  int result;
+  vector<string> result;
 
    cout<<"Welcome to \"search it\". We first need some input data."<<endl;
    cout<<"We'll assume the inputs do not have any spaces."<<endl<<endl;
@@ -53,36 +60,21 @@ int main()
   }
  
    cout<<endl<<"To end input type the #-character (followed by Enter)"<<endl<<endl;
-  cout<<"Enter a value to search for: ";
-
-
-   cin>>search_key;
-
-
  
-    for(search_key = "#";search_key < data.size();search_key++)//perform searches until sentinel entered
-    {
-        int small=search_key;
+  result = sort(inputs);
 
-	 for(int j = search_key+1;j<data.size();j++)
-		{
-			if (data[j]<data[small])
-				small=j;
-		}
-	swap (D[search_key],D[small]);
-	}
-
-      //  cout<<"  '"<<search_key<<"' was ";
-
-      //  if (result == -1)
-      //    cout<<"not found";
-       // else
-       //   cout<<"found at index "<<result;
-
-
-       // cout<<endl<<endl<<"Enter a value to search for: ";
-       // cin>>search_key; 
-    }
+	
+	cout<<result[0]<<endl;
+	cout<<result[1]<<endl;;
+	cout<<result[2]<<endl;;
+	cout<<result[3]<<endl;;
+	cout<<result[4]<<endl;;
+	cout<<result[5]<<endl;;
+	cout<<result[6]<<endl;;
+	cout<<result[7]<<endl;;
+	cout<<result[8]<<endl;;
+	cout<<result[9]<<endl;;
+	cout<<result[10]<<endl;;
 
    cout<<endl<<"Program \"search it\" is now finished."<<endl<<endl;
 
