@@ -64,17 +64,10 @@ int main()
   result = sort(inputs);
 
 	
-	cout<<result[0]<<endl;
-	cout<<result[1]<<endl;;
-	cout<<result[2]<<endl;;
-	cout<<result[3]<<endl;;
-	cout<<result[4]<<endl;;
-	cout<<result[5]<<endl;;
-	cout<<result[6]<<endl;;
-	cout<<result[7]<<endl;;
-	cout<<result[8]<<endl;;
-	cout<<result[9]<<endl;;
-	cout<<result[10]<<endl;;
+	for(unsigned int i=0;i<result.size();i++)
+	{
+		cout<<result[i]<<endl;
+	}
 
    cout<<endl<<"Program \"search it\" is now finished."<<endl<<endl;
 
